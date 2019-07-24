@@ -45,14 +45,20 @@ swapoff -a
 # Init kubeadm
 kubeadm init --ignore-preflight-errors NumCPU
 
+#####################################################
 # Make kubectl work for the current user
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
+# TODO: check if root is the current user, if it is, doesn't execute this script
+
+# mkdir -p $HOME/.kube
+# sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+# sudo chown $(id -u):$(id -g) $HOME/.kube/config
+#####################################################
 
 #####################################################
-# TODO: add this to /etc/profile
-export KUBECONFIG=/etc/kubernetes/admin.conf
+# Add KUBECONFIG variable to all users
+echo export KUBECONFIG=/etc/kubernetes/admin.conf > /etc/profile.d/kubernetes.conf
+source /etc/profile
+source /etc/profile.d/kubernetes.conf
 #####################################################
 
 # Set /proc/sys/net/bridge/bridge-nf-call-iptables to 1
