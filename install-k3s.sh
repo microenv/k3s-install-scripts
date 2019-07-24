@@ -40,6 +40,15 @@ sysctl --system
 # Update kubeadm
 yum update -y
 
+# Install docker
+yum install docker
+# Add current user to docker group
+usermod -aG docker $(whoami)
+# Run docker on startup
+systemctl enable docker.service
+# Start docker
+systemctl start docker.service
+
 # disable swap
 swapoff -a
 
