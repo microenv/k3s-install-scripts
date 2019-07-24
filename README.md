@@ -17,5 +17,5 @@ sudo su
 **Then run the following command**
 
 ```
-curl -s https://raw.githubusercontent.com/microenv/k3s-install-scripts/master/install-k3s.sh | bash -s && source /etc/profile && /etc/profile.d/kubernetes.conf
+curl -s https://raw.githubusercontent.com/microenv/k3s-install-scripts/master/install-k3s.sh | bash -s && sudo source /etc/profile && sudo /etc/profile.d/kubernetes.conf
 ```
