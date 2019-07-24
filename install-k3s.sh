@@ -52,6 +52,10 @@ systemctl start docker.service
 # disable swap
 swapoff -a
 
+# disable firewalld
+systemctl disable firewalld
+systemctl stop firewalld
+
 # Init kubeadm
 kubeadm init --ignore-preflight-errors NumCPU
 
