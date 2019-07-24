@@ -41,7 +41,7 @@ sysctl --system
 yum update -y
 
 # Install docker
-yum install docker
+yum install -y docker
 # Add current user to docker group
 usermod -aG docker $(whoami)
 # Run docker on startup
