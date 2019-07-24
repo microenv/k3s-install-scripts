@@ -10,5 +10,5 @@ Work in progress
 To install kubernetes in a single control-plane cluster, run:
 
 ```
-curl -s https://raw.githubusercontent.com/microenv/k3s-install-scripts/master/install-k3s.sh | bash -s
+sudo su && curl -s https://raw.githubusercontent.com/microenv/k3s-install-scripts/master/install-k3s.sh | bash -s && source /etc/profile && /etc/profile.d/kubernetes.conf
 ```
