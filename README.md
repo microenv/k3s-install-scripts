@@ -6,16 +6,26 @@ Work in progress
 
 ## Install kubernetes only
 
-To install kubernetes in a single control-plane cluster, run:
+To install kubernetes in a single control-plane cluster:
 
-**Become a super user**
+**1. Become a super user**
+
+The installation needs su privileges to run properly.
 
 ```
 sudo su
 ```
 
-**Then run the following command**
+**2. Install and configure kubeadm**
 
 ```
-curl -s https://raw.githubusercontent.com/microenv/k3s-install-scripts/master/install-k3s.sh | bash -s && sudo source /etc/profile && sudo /etc/profile.d/kubernetes.conf
+curl -s https://raw.githubusercontent.com/microenv/k3s-install-scripts/master/install-k3s.sh | bash -s
+```
+
+**3. Reboot**
+
+You can wether reboot your machine or run the following command:
+
+```
+source /etc/profile && source /etc/profile.d/kubernetes.conf
 ```
