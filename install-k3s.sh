@@ -67,3 +67,7 @@ source /etc/profile.d/kubernetes.conf
 # Set /proc/sys/net/bridge/bridge-nf-call-iptables to 1
 sysctl net.bridge.bridge-nf-call-iptables=1
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+
+# Control plane node isolation
+# https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#control-plane-node-isolation
+kubectl taint nodes --all node-role.kubernetes.io/master-
