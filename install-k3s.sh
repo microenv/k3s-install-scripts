@@ -43,7 +43,7 @@ yum update -y
 swapoff -a
 
 # Init kubeadm
-kubeadm init --ignore-preflight-errors all
+kubeadm init --ignore-preflight-errors NumCPU
 
 # Make kubectl work for the current user
 mkdir -p $HOME/.kube
